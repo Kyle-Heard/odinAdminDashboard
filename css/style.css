@@ -1,42 +1,49 @@
-:root{
-
+:root {
+    box-sizing: border-box;
+    --main-color: #00bbfb;
 }
 
-ul{
+body {
+    margin: 0;
+}
+
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: black;
 }
 
-a:active{
+a:active {
     color: pink;
 }
 
-.mainContainer{
+.mainContainer {
+    min-height: 98vh;
+
     display: grid;
-    grid-template: 1fr 5fr / 1fr 4fr;
-    grid-template-areas: 
-    "sidebar header"
-    "sidebar content";
+    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content";
 
 }
 
-.header{
+.header {
     grid-area: header;
 }
 
-.sidebar{
+.sidebar {
     grid-area: sidebar;
-    background-color: #00bbfb;
+    background-color: var(--main-color);
 
     display: flex;
     flex-direction: column;
@@ -47,15 +54,18 @@ a:active{
     font-size: 1.3rem;
 }
 
-.content{
+.content {
     grid-area: content;
 }
 
-.nav, .navhelp, .sidebar h1{
+.nav,
+.navhelp,
+.sidebar h1 {
     margin: 10px;
 }
 
-.nav, .navhelp{
+.nav,
+.navhelp {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -63,26 +73,218 @@ a:active{
 
 
 
-.sidebar img{
+.sidebar img {
     max-width: min(10%, 35px);
 }
 
-.sidebar h1 img{
+.sidebar h1 img {
     max-width: min(15%, 50px);
 }
 
 .sidebar h1,
-.sidebar a{
+.sidebar a {
     display: flex;
     align-items: center;
     gap: 15px;
     width: 100%;
 }
 
-
-
-
-.mainContainer > div{
-    border: 1px solid black;
+.header {
+    display: grid;
+    grid-template: 1fr 2fr / 2fr 1fr;
 }
 
+.search {
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.searchBar {
+    background-color: #dde;
+    flex: 1;
+    max-width: min(800px, 100%);
+    border-radius: 10px;
+    border: none;
+    height: 30%;
+}
+
+.search img {
+    max-width: min(7.5%, 100px);
+}
+
+
+
+.userHeader {
+    font-size: .9rem;
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.userHeader img {
+    max-width: min(80px, 12%);
+}
+
+img.notificationIcon {
+    max-width: min(40px, 6%);
+}
+
+.userGreeting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.userGreeting img {
+    max-width: min(100px, 15%);
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.greeting p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.greeting p+p {
+    font-size: 1.8rem;
+}
+
+.headerButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header button {
+    height: 25%;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 2rem;
+    width: clamp(100px, 20%, 30%);
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+}
+
+button:hover {
+    box-shadow: 2px 2px 3px 3px black inset;
+}
+
+button:active {
+    background-color: #444;
+}
+
+.content {
+    background-color: #dde;
+    box-shadow: 0 -5px 5px 0px #ccd;
+
+    display: grid;
+    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template-areas:
+        "projects announce"
+        "projects trending";
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.announce {
+    grid-area: announce;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.announcementCard {
+    background-color: white;
+    border-radius: 1rem;
+    padding: .25rem 1.5rem;
+    margin: 0 20px 0 0;
+}
+
+.announcementCard div:nth-child(n+2) {
+    border-top: 2px solid #0002;
+}
+
+.announcementContent p {
+    margin: .5rem 0;
+    font-size: .9rem;
+    color: #444;
+}
+
+.trendingCard {
+    background-color: white;
+    border-radius: 1rem;
+    padding: .25rem 1.5rem;
+    margin: 0 20px 0 0;
+    gap: 10px;
+}
+
+.trendingUser {
+    display: flex;
+    gap: 10%;
+}
+
+.trendingUser img {
+    max-width: min(20%, 100px);
+
+}
+
+.projects {
+
+    margin: 0 20px;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectContainer {
+    flex: 1;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.projectCard {
+    background-color: white;
+    border-left: 8px solid #fc3;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.projectCard *{
+    margin: 0;
+}
+
+.buttonContainer {
+    margin-top: 10%;
+    align-self: flex-end;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonContainer button{
+    width: 20%;
+    border: none;
+    background-color: #0000;
+}
