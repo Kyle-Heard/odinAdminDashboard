@@ -26,6 +26,12 @@ a:active {
     color: pink;
 }
 
+
+a:hover{
+    padding-left: 1rem;
+    transition: .1s ease;
+}
+
 .mainContainer {
     min-height: 98vh;
 
@@ -255,7 +261,7 @@ button:active {
 .projectContainer {
     flex: 1;
     display: grid;
-    gap: 3%;
+    gap: 2%;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
 }
@@ -287,4 +293,12 @@ button:active {
     width: 20%;
     border: none;
     background-color: #0000;
+}
+
+.projectCard:hover{
+    background-color: #ddd;
+    transition: 0.3s ease;
+    flex: 2;
+    margin: -1rem;
+    z-index: 99;
 }
